@@ -1,0 +1,35 @@
+<form
+  [formGroup]="form"
+  #formDirective="ngForm"
+  (ngSubmit)="onSubmit(formDirective)"
+>
+  <p>Ingrese los siguientes datos para calcular sus horas trabajadas.</p>
+  <!-- Technician -->
+  <mat-form-field appearance="legacy">
+    <mat-label>Identificación del técnico</mat-label>
+    <input matInput formControlName="technicianId" />
+    <mat-icon matSuffix>face</mat-icon>
+  </mat-form-field>
+  <!-- Service -->
+  <mat-form-field appearance="legacy">
+    <mat-label>Número de la semana</mat-label>
+    <input
+      type="number"
+      min="1"
+      max="53"
+      matInput
+      formControlName="weekNumber"
+    />
+    <mat-icon matSuffix>today</mat-icon>
+    <mat-hint>Mínimo 1 y máximo 53</mat-hint>
+  </mat-form-field>
+  <button
+    type="submit"
+    mat-raised-button
+    color="primary"
+    [class.spinner]="isLoading"
+    [disabled]="isLoading"
+  >
+    Registrar
+  </button>
+</form>

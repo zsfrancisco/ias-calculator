@@ -1,0 +1,27 @@
+@import "../../../../../assets/scss/index.scss";
+
+:host {
+  &::ng-deep {
+    tr.mat-header-row {
+        @include gradient-default(90deg);
+    }
+  }
+}
+
+p {
+  font-size: 1.25em;
+}
+
+table {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+
+  th {
+      color: $secondary;
+  }
+}
+
+button {
+  margin-top: 1.25em;
+}

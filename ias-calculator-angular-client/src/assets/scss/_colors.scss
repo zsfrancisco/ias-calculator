@@ -1,0 +1,14 @@
+$primary: #1b557a;
+$primary-dark: #0a2a3d;
+$secondary: #e5eeff;
+$red: #ef9a9a;
+$gray: #d1d1d1;
+$background-light: #ffffff;
+@mixin gradient-default($direction) {
+  background: linear-gradient(
+    $direction,
+    rgba(27, 85, 122, 1) 0%,
+    rgba(20, 67, 97, 1) 37%,
+    rgba(10, 42, 61, 1) 100%
+  );
+}

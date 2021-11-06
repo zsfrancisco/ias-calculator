@@ -1,0 +1,42 @@
+@import "~@angular/material/theming";
+@import "./colors";
+@include mat-core();
+
+$handy-blue: (
+  50: #1b557a,
+  100: #144361,
+  200: #0a2a3d,
+  300: #144361,
+  400: #144361,
+  500: #144361,
+  600: #144361,
+  700: #144361,
+  800: #144361,
+  900: #144361,
+  A100: #144361,
+  A200: #144361,
+  A400: #144361,
+  A700: #144361,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  ),
+);
+$handy-primary: mat-palette($handy-blue, 100, 50, 200);
+$accent: mat-palette($mat-blue, 200);
+
+$theme: mat-light-theme($handy-primary, $accent);
+
+@include angular-material-theme($theme);

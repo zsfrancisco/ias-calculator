@@ -1,0 +1,23 @@
+@mixin handy-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+@mixin handy-content-img {
+  width: 30em;
+  height: auto;
+}
+
+@mixin handy-content-form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  max-width: 500px;
+
+  p {
+    font-size: 1.25em;
+  }
+}

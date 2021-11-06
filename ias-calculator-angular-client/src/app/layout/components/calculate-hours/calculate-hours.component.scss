@@ -1,0 +1,26 @@
+@import "../../../../assets/scss/index.scss";
+
+:host {
+  @include handy-content;
+}
+
+img {
+  @include handy-content-img;
+  @include responsive(md) {
+    display: none;
+  }
+}
+
+.calculate-hours {
+  width: 30%;
+  @include responsive(md) {
+    width: 65%;
+  }
+
+  calculate-hours {
+    &-form,
+    &-table {
+      width: 100%;
+    }
+  }
+}

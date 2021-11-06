@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  calculator_api:
+    image: zsfrancisco/calculator_api:v1
+    container_name: calculator_api
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+    - 8080:8080
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: handyman_hours
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: aWni+23j*FZ
+    ports:
+      - 27017:27017

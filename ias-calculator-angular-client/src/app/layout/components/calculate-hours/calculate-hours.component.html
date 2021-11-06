@@ -1,0 +1,13 @@
+<img src="assets/img/jpg/calculate.jpg" alt="calculate-hours" />
+<div class="calculate-hours">
+  <calculate-hours-form
+    (hoursCalculated)="onHoursCalculated($event)"
+    (calculateHourBodyRequest)="onCalculateHourBodyRequest($event)"
+    *ngIf="showForm"
+  ></calculate-hours-form>
+  <calculate-hours-table
+    [hoursCalculated]="hoursCalculated"
+    [calculateHourBodyRequest]="calculateHourBodyRequest"
+    (makeOtherRequest)="onMakeOtherRequest()"
+  ></calculate-hours-table>
+</div>

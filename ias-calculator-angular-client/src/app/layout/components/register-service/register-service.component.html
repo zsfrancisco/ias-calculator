@@ -1,0 +1,79 @@
+<img src="assets/img/jpg/register.jpg" alt="register-service" />
+<form
+  [formGroup]="form"
+  #formDirective="ngForm"
+  (ngSubmit)="onSubmit(formDirective)"
+>
+  <p>Ingrese los siguientes datos para registrar un servicio realizado.</p>
+  <!-- Technician -->
+  <mat-form-field appearance="legacy">
+    <mat-label>Identificación del técnico</mat-label>
+    <input matInput formControlName="technicianId" />
+    <mat-icon matSuffix>face</mat-icon>
+  </mat-form-field>
+  <!-- Service -->
+  <mat-form-field appearance="legacy">
+    <mat-label>Identificador del servicio</mat-label>
+    <input matInput formControlName="serviceId" />
+    <mat-icon matSuffix>settings</mat-icon>
+  </mat-form-field>
+  <!-- Init date -->
+  <div class="handy-date">
+    <mat-form-field appearance="legacy">
+      <mat-label>Fecha inicial</mat-label>
+      <input
+        matInput
+        [owlDateTimeTrigger]="dt1"
+        [owlDateTime]="dt1"
+        formControlName="initDate"
+      />
+      <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+      <mat-icon matSuffix>event</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Hora inicial</mat-label>
+      <input
+        matInput
+        formControlName="initHour"
+        [owlDateTimeTrigger]="dt2"
+        [owlDateTime]="dt2"
+      />
+      <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
+      <mat-icon matSuffix>schedule</mat-icon>
+    </mat-form-field>
+  </div>
+  <!-- finish date -->
+  <div class="handy-date">
+    <mat-form-field appearance="legacy">
+      <mat-label>Fecha final</mat-label>
+      <input
+        matInput
+        formControlName="finishDate"
+        [owlDateTimeTrigger]="dt3"
+        [owlDateTime]="dt3"
+      />
+      <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+      <mat-icon matSuffix>event</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Hora final</mat-label>
+      <input
+        matInput
+        formControlName="finishHour"
+        [owlDateTimeTrigger]="dt4"
+        [owlDateTime]="dt4"
+      />
+      <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+      <mat-icon matSuffix>schedule</mat-icon>
+    </mat-form-field>
+  </div>
+  <button
+    type="submit"
+    mat-raised-button
+    color="primary"
+    [class.spinner]="isLoading"
+    [disabled]="isLoading"
+  >
+    Registrar
+  </button>
+</form>

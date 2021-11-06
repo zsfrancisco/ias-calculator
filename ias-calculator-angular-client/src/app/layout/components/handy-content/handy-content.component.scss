@@ -1,0 +1,17 @@
+@import "../../../../assets/scss/index.scss";
+
+:host {
+  background-color: $background-light;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+
+  &::ng-deep {
+    .mat {
+      &-tab-list {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

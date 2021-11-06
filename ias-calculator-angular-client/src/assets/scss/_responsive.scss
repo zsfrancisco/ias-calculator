@@ -1,0 +1,23 @@
+@mixin responsive($size) {
+  @if $size == xs {
+    @media screen and (max-width: 479px) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media screen and (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media screen and (max-width: 800px) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media screen and (max-width: 1023px) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media screen and (max-width: 1279px) {
+      @content;
+    }
+  }
+}
